@@ -1,4 +1,4 @@
-#dotfiles
+# dotfiles
 My personal dotfiles, based on https://github.com/bahlo/dotfiles
 
 ## Install
