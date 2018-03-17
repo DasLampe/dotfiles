@@ -1,0 +1,9 @@
+zsh
+git
+jump
+thefuck
+tmux
+htop-osx
+vim
+pwgen
+ctags
