@@ -1,4 +1,11 @@
-all: links brew
+ifeq ($(shell uname -s),Linux)
+       actions=links
+endif
+ifeq ($(shell uname -s),Darwin)
+       actions=links brew
+endif
+
+all: $(actions)
 
 links:
 	[ -f ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
