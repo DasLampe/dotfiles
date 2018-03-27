@@ -10,15 +10,18 @@ ZSH_THEME="af-magic"
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 
-plugins=(git gem history history-substring-search terminalapp brew  common-aliases osx rails)
+plugins=(git gem history history-substring-search terminalapp brew common-aliases osx rails)
 
-source $ZSH/oh-my-zsh.sh
+# Load if exists
+test -e $ZSH/oh-my-zsh.sh && source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/Users/andre/.rvm/bin:/usr/local/opt/php56/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin:/usr/texbin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+if type "brew" > /dev/null; then
+	export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+fi
 
 export EDITOR='vim'
 
@@ -27,10 +30,6 @@ export LANG=en_US.UTF-8
 
 bindkey "[D" backward-word
 bindkey "[C" forward-word
-
-eval $(thefuck --alias)
-
-
 
 # support colors in less
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -41,6 +40,12 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-# brew install jump
-# https://github.com/gsamokovarov/jump
-eval "$(jump shell)"
+if type "thefuck" > /dev/null; then
+	eval $(thefuck --alias)
+fi
+
+if type "jump" > /dev/null; then
+	# brew install jump
+	# https://github.com/gsamokovarov/jump
+	eval "$(jump shell)"
+fi
