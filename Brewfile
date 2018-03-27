@@ -1,3 +1,4 @@
+restic
 zsh
 git
 jump
