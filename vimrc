@@ -74,7 +74,6 @@ set rulerformat=%l/%L(%p%%),%c " a better ruler
 "set hlsearch
 set visualbell
 set noerrorbells
-set t_vb=a
 set lazyredraw
 
 
@@ -118,6 +117,10 @@ nmap <C-v> "*p     " Paste from system clipboard
 syntax enable
 set t_Co=256
 set background=dark
+
+set backspace=indent,eol,start
+
+
 "
 let g:molokai_original = 1
 let g:rehash256 = 1
