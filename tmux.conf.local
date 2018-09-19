@@ -1,0 +1,8 @@
+#hardstatus alwayslastline "O%{rk} %H:%S %{wk}%= %?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%? %=%{yk} %Y-%m-%d %c %{gk} %l"
+
+set-option -g prefix C-y
+unbind-key C-b
+bind-key b send-prefix
+
+tmux_conf_theme_status_left=' ❐ #S | ↑#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}, %R , %d %b , #{loadavg} | #{username}#{root} | #{hostname}'

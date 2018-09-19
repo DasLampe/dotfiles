@@ -14,7 +14,8 @@ all: $(actions)
 
 links:
 	[ -f ~/.vimrc ] || ln -s $(current_dir)vimrc ~/.vimrc
-	[ -f ~/.tmux.conf ] || ln -s $(current_dir)tmux.conf ~/.tmux.conf
+	[ -f ~/.tmux.conf ] || ln -s $(current_dir)tmux/.tmux.conf ~/.tmux.conf
+	[ -f ~/.tmux.conf.local ] || ln -s $(current_dir)tmux.conf.local ~/.tmux.conf.local
 	[ -f ~/.gitconfig ] || ln -s $(current_dir)gitconfig ~/.gitconfig
 	[ -f ~/.gitignore_global ] || ln -s $(current_dir)gitignore_global ~/.gitignore_global
 	[ -f ~/.zshrc ] || ln -s $(current_dir)zshrc ~/.zshrc
