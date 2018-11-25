@@ -24,7 +24,8 @@ brew:
 
 clean:
 	rm -f ~/.vimrc
-	rm -f ~/.tmux
+	rm -f ~/.tmux.conf
+	rm -f ~/.tmux.conf.local
 	rm -f ~/.gitignore_global
 	rm -f ~/.gitconfig
 	rm -f ~/.zshrc
