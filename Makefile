@@ -23,10 +23,11 @@ brew:
 	cat Brewfile | xargs -n1 brew install
 
 clean:
-	rm -f ~/.vimrc
-	rm -f ~/.tmux
-	rm -f ~/.gitignore_global
-	rm -f ~/.gitconfig
-	rm -f ~/.zshrc
+	[ ! -f ~/.vimrc ] || mv ~/.vimrc ~/.vimrc.bak
+	[ ! -f ~/.tmux.conf ] || mv ~/.tmux.conf ~/.tmux.conf.bak
+	[ ! -f ~/.tmux.conf.local ] || mv ~/.tmux.conf.local ~/.tmux.conf.local.bak
+	[ ! -f ~/.gitignore_global ] || mv ~/.gitignore_global ~/.gitignore_global.bak
+	[ ! -f ~/.gitconfig ] || mv ~/.gitconfig ~/.gitconfig.bak
+	[ ! -f ~/.zshrc ] || mv ~/.zshrc ~/.zshrc.bak
 
 .PHONY: all links brew clean
