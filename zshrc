@@ -54,7 +54,7 @@ precmd() { tableflip; }
 
 tableflip() {
 	if [ $? -ne 0 ]; then
-		echo "(╯°□°）╯︵ ┻━┻"\n
+		echo "(╯°□°）╯︵ ┻━┻\n"
 	fi
 }
 
