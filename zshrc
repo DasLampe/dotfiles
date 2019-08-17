@@ -49,3 +49,16 @@ if type "jump" > /dev/null; then
 	# https://github.com/gsamokovarov/jump
 	eval "$(jump shell)"
 fi
+
+precmd() { tableflip; }
+
+tableflip() {
+	if [ $? -ne 0 ]; then
+		echo "(╯°□°）╯︵ ┻━┻\n"
+	fi
+}
+
+export JAVA_HOME=/usr/bin/java
+export PATH=$JAVA_HOME/bin:$PATH
+
+export PATH=~/.local/bin:$PATH

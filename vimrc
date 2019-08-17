@@ -38,6 +38,9 @@ call plug#begin('~/.vim/plugged')
 	" Themes
 	Plug 'tomasr/molokai'
 	Plug 'mhartington/oceanic-next'
+
+	" A.L.E (https://github.com/w0rp/ale)
+	Plug 'w0rp/ale'
 call plug#end()
 
 

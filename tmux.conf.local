@@ -1,4 +1,5 @@
 #hardstatus alwayslastline "O%{rk} %H:%S %{wk}%= %?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%? %=%{yk} %Y-%m-%d %c %{gk} %l"
+set-option -g default-shell $SHELL
 
 set-option -g prefix C-y
 unbind-key C-b
