@@ -10,7 +10,7 @@ ZSH_THEME="bureau"
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 
-plugins=(git gem history history-substring-search terminalapp brew common-aliases osx rails)
+plugins=(git gem history history-substring-search brew common-aliases rails)
 
 # Load if exists
 test -e $ZSH/oh-my-zsh.sh && source $ZSH/oh-my-zsh.sh
@@ -18,10 +18,6 @@ test -e $ZSH/oh-my-zsh.sh && source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
-
-if type "brew" > /dev/null; then
-	export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-fi
 
 export EDITOR='vim'
 
@@ -39,16 +35,6 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
-
-if type "thefuck" > /dev/null; then
-	eval $(thefuck --alias)
-fi
-
-if type "jump" > /dev/null; then
-	# brew install jump
-	# https://github.com/gsamokovarov/jump
-	eval "$(jump shell)"
-fi
 
 precmd() { tableflip; }
 
