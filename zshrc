@@ -20,6 +20,7 @@ test -e $ZSH/oh-my-zsh.sh && source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 export EDITOR='vim'
+export SHELL=$(which zsh)
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
