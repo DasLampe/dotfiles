@@ -17,7 +17,7 @@ test -e $ZSH/oh-my-zsh.sh && source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin"
 
 export EDITOR='vim'
 export SHELL=$(which zsh)
