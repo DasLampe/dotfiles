@@ -1,18 +1,1 @@
-[core]
-	excludesfile = ~/.gitignore_global
-	editor = vim
-	autocrlf = false
-	ignorecase = false
-	quotepath = false
-[user]
-	name = DasLampe
-	email = daslampe@lano-crew.org
-	signingkey = 164AAF1E
-[push]
-	default = simple
-[merge]
-	tool = vimdiff
-[commit]
-	gpgsign = true
-[push]
-	followTags = true
+git/gitconfig

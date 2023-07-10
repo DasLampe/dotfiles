@@ -1,7 +1,7 @@
 #Get path of dir, where makefile is, so you creat correct links
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 current_dir := $(dir $(mkfile_path))
-files := vimrc tmux.conf gitignore_global gitconfig zshrc test
+files := vimrc tmux.conf gitignore_global gitconfig zshrc
 
 all: clean link
 

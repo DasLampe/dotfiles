@@ -1,0 +1,20 @@
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim
+	autocrlf = false
+	ignorecase = false
+	quotepath = false
+[user]
+	name = André Flemming
+	email = andre.flemming@pixum.com
+	signingkey = 54C2720EF0D3977AD32365CDA63B951F29635B44
+[push]
+	default = simple
+[merge]
+	tool = vimdiff
+[commit]
+	gpgsign = true
+[push]
+	followTags = true
+[init]
+	templatedir = ~/.dotfiles/git
