@@ -50,6 +50,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$(go env GOPATH)/bin
+export PATH=$PATH:/snap/bin
 
 export PATH=~/.local/bin:$PATH
 
