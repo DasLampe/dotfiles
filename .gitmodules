@@ -1,0 +1,3 @@
+[submodule "tilix/schemes/catppuccin"]
+	path = tilix/schemes/catppuccin
+	url = https://github.com/catppuccin/tilix.git
