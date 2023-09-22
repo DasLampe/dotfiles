@@ -38,6 +38,7 @@ call plug#begin('~/.vim/plugged')
 	" Themes
 	Plug 'tomasr/molokai'
 	Plug 'mhartington/oceanic-next'
+	Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 	" A.L.E (https://github.com/w0rp/ale)
 	Plug 'w0rp/ale'
@@ -88,9 +89,9 @@ set shiftwidth=4
 set cursorline
 
 "highlight long lines
-let &colorcolumn=join(range(81,999),",")
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
-let &colorcolumn="80,".join(range(120,999),",")
+"let &colorcolumn=join(range(81,999),",")
+"highlight ColorColumn ctermbg=235 guibg=#2c2d27
+"let &colorcolumn="80,".join(range(120,999),",")
 
 " instead of :lcd %:p:h
 " to change directories upon opening a file
@@ -119,17 +120,11 @@ nmap <C-v> "*p     " Paste from system clipboard
 " Theme
 syntax enable
 set t_Co=256
-set background=dark
+colorscheme catppuccin_mocha
 
 set backspace=indent,eol,start
 
-
-"
-let g:molokai_original = 1
 let g:rehash256 = 1
-"colorscheme molokai
-colorscheme OceanicNext
-
 " for use with :Gist
 "" clipboard fix
 let g:gist_clip_command = 'xclip -selection clipboard'
