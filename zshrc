@@ -54,6 +54,14 @@ export PATH=$PATH:/snap/bin
 
 export PATH=~/.local/bin:$PATH
 
+if command -v kubectl &> /dev/null; then
+	export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+fi
+
+if command -v bat &> /dev/null; then
+	alias cat='bat'
+fi
+
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
