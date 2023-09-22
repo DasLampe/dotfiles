@@ -65,3 +65,11 @@ fi
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
+if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+
+if command -v terraform &> /dev/null; then
+	alias tf=terraform
+	alias tfa='terraform apply'
+	alias tfi='terraform init -upgrade && terraform init'
+	alias tfp='terraform plan'
+fi
