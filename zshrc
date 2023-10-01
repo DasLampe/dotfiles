@@ -10,7 +10,7 @@ ZSH_THEME="bureau"
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 
-plugins=(git gem history history-substring-search brew common-aliases rails)
+plugins=(git pass gem history history-substring-search brew common-aliases rails)
 
 # Load if exists
 test -e $ZSH/oh-my-zsh.sh && source $ZSH/oh-my-zsh.sh

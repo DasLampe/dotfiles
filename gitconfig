@@ -1,1 +1,19 @@
-git/gitconfig
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim
+	autocrlf = false
+	ignorecase = false
+	quotepath = false
+[user]
+	name = DasLampe
+	email = daslampe@lano-crew.org
+	signingkey = 397C272C38384BFC42A20070A88B5C66164AAF1E
+[push]
+	default = simple
+	followTags = true
+[merge]
+	tool = vimdiff
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = master
