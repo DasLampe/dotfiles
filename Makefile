@@ -15,8 +15,11 @@ endef
 
 link:
 	$(foreach f,$(files),$(call FILE_link,$(f)))
+	mkdir -p  ~/.config/tilix/schemes/
+	ln -s $(current_dir)/tilix/schemes/catppuccin/src/Catppuccin-Mocha.json ~/.config/tilix/schemes/Catppuccin-Mocha.json
 
 clean:
 	$(foreach f,$(files),$(call FILE_unlink,$(f)))
+	$(call FILE_unlink,"config/tilix/schemes/Catppuccin-Mocha.json")
 
 .PHONY: all link clean
