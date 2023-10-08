@@ -38,7 +38,7 @@ call plug#begin('~/.vim/plugged')
 	" Themes
 	Plug 'tomasr/molokai'
 	Plug 'mhartington/oceanic-next'
-	Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+	Plug 'catppuccin/vim', { 'as': 'catppuccin', 'branch': 'main' }
 
 	" A.L.E (https://github.com/w0rp/ale)
 	Plug 'w0rp/ale'
