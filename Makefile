@@ -3,7 +3,7 @@ mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 current_dir := $(dir $(mkfile_path))
 files := vimrc tmux.conf gitignore_global gitconfig zshrc
 
-all: clean link
+all: clean link update
 
 define FILE_link
 	[ -f ~/.$(1) -o -L ~/.$(1) ] || ln -s $(current_dir)$(1) ~/.$(1);
@@ -18,8 +18,13 @@ link:
 	mkdir -p  ~/.config/tilix/schemes/
 	ln -s $(current_dir)/tilix/schemes/catppuccin/src/Catppuccin-Mocha.json ~/.config/tilix/schemes/Catppuccin-Mocha.json
 
+update:
+	git pull origin $$(git branch --show-current)
+	git submodule update --init
+	vim -c "PlugUpgrade|PlugUpdate|PlugInstall|q|q"
+
 clean:
 	$(foreach f,$(files),$(call FILE_unlink,$(f)))
 	$(call FILE_unlink,"config/tilix/schemes/Catppuccin-Mocha.json")
 
-.PHONY: all link clean
+.PHONY: all link update clean
