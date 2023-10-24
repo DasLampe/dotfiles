@@ -19,7 +19,7 @@ link:
 	ln -s $(current_dir)/tilix/schemes/catppuccin/src/Catppuccin-Mocha.json ~/.config/tilix/schemes/Catppuccin-Mocha.json
 
 update:
-	git pull origin $$(git branch --show-current)
+	git pull origin $$(git branch --show-current) --ff-only
 	git submodule update --init
 	vim -c "PlugUpgrade|PlugUpdate|PlugInstall|q|q"
 
