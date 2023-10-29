@@ -120,7 +120,11 @@ nmap <C-v> "*p     " Paste from system clipboard
 " Theme
 syntax enable
 set t_Co=256
-colorscheme catppuccin_mocha
+try 
+	colorscheme catppuccin_mocha
+catch /^Vim\%((\a\+)\)\=:E185/
+	" Colorscheme not available. Use default.
+endtry
 
 set backspace=indent,eol,start
 
