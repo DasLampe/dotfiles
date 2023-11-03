@@ -22,6 +22,7 @@ dconf:
 	dconf load /org/mate/desktop/interface/ < mate/org_mate_desktop_interface.conf
 	dconf load /org/mate/marco/global-keybindings/ < mate/org_mate_marco_global-keybindings.conf
 	dconf load /org/mate/marco/window-keybindings/ < mate/org_mate_marco_window-keybindings.conf
+	dconf load /com/gexperts/Tilix/ < mate/com_gexperts_Tilix.conf
 
 update:
 	git pull origin $$(git branch --show-current) --ff-only
