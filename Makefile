@@ -18,6 +18,11 @@ link:
 	mkdir -p  ~/.config/tilix/schemes/
 	ln -s $(current_dir)/tilix/schemes/catppuccin/src/Catppuccin-Mocha.json ~/.config/tilix/schemes/Catppuccin-Mocha.json
 
+dconf:
+	dconf load /org/mate/desktop/interface/ < mate/org_mate_desktop_interface.conf
+	dconf load /org/mate/marco/global-keybindings/ < mate/org_mate_marco_global-keybindings.conf
+	dconf load /org/mate/marco/window-keybindings/ < mate/org_mate_marco_window-keybindings.conf
+
 update:
 	git pull origin $$(git branch --show-current) --ff-only
 	git submodule update --init
