@@ -62,6 +62,14 @@ if command -v bat &> /dev/null; then
 	alias cat='bat'
 fi
 
+if command -v rg &> /dev/null; then
+	alias grep='rg'
+fi
+
+if command -v exa &> /dev/null; then
+	alias ls='exa'
+fi
+
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
