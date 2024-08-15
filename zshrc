@@ -81,3 +81,7 @@ if command -v terraform &> /dev/null; then
 	alias tfi='terraform init -upgrade && terraform init'
 	alias tfp='terraform plan'
 fi
+
+# Load specific local configuration, if exist
+test -e $HOME/.zshrc.local && source $HOME/.zshrc.local
+
