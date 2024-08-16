@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '.tf$')
+
+if [[ $STAGED_FILES == "" ]]; then
+	exit 0
+fi
+
+for f in $STAGED_FILES
+do
+	terraform fmt $f
+	git add $f
+done
+
+exit 0
