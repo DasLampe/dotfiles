@@ -9,6 +9,7 @@
 !/.config/kitty/
 !/.config/alacritty/
 !/.config/systemd/user/
+!/.config/rofi/
 !/.config/gtk-3.0/settings.ini
 
 !/.Xresources
