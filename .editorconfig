@@ -5,19 +5,29 @@ root = true
 
 # Unix-style newlines with a newline ending every file
 [*]
+indent_style = tab
+indent_size = 4
 end_of_line = lf
 insert_final_newline = true
 charset = utf-8
+trim_trailing_whitespace = true
 
-# 4 space indentation
+# Trimming trailing whitespace when editing diffs will break hunk editing in
+# interactive Git commands like `git add -p`.
+[*.{diff,patch}]
+trim_trailing_whitespace = false
+
+[*.{journal,md,py,sls,yaml,yml,yml.j2}]
+indent_style = space
+
+[*.{html,journal,js,sls,vue,yaml,yml,yml.j2}]
+indent_size = 2
+
 [*.py]
 indent_style = space
 indent_size = 4
+# PEP 8 line lengths.
+max_line_length = 79
 
-# Tab indentation (no size specified)
 [Makefile]
 indent_style = tab
-
-# Files with a smaller indent
-[{*.yml,*.yaml}]
-indent_size = 2
