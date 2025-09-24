@@ -119,7 +119,7 @@ nmap <C-v> "*p     " Paste from system clipboard
 
 " Theme
 syntax enable
-set t_Co=256
+"set t_Co=256
 try 
 	colorscheme catppuccin_mocha
 catch /^Vim\%((\a\+)\)\=:E185/
