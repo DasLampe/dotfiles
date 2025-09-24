@@ -1,16 +1,13 @@
-# Ignore everything
-.*
-*/
-*
-
-!.gitignore
+/*
 
 # Allow .config
-!/.config/i3
-!/.config/git
-!/.config/kitty
-!/.config/systemd/user
-
+!/.config
+/.config/*
+!/.config/i3/
+!/.config/git/
+!/.config/kitty/
+!/.config/systemd/user/
+!/.config/gtk-3.0/settings.ini
 
 !/.Xresources
 !/.editorconfig
@@ -20,12 +17,18 @@
 !/.gitmodules
 !/.tmux.conf
 !/.tmux/
-!/.vim/**/
-!.vimrc
 
-!.xsession
-!.zshrc
+!/.vim/
+/.vim/*
+!/.vim/autoload
 
-!Brewfile
-!LICENSE
-!README.md
+!/.vimrc
+
+!/.xsession
+!/.zshrc
+
+!/Brewfile
+!/LICENSE
+!/README.md# Ignore everything
+
+!/.gitignore
