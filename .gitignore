@@ -1,0 +1,31 @@
+# Ignore everything
+.*
+*/
+*
+
+!.gitignore
+
+# Allow .config
+!/.config/i3
+!/.config/git
+!/.config/kitty
+!/.config/systemd/user
+
+
+!/.Xresources
+!/.editorconfig
+!/.gitconfig
+!/.githooks_global
+!/.gitignore_global
+!/.gitmodules
+!/.tmux.conf
+!/.tmux/
+!/.vim/**/
+!.vimrc
+
+!.xsession
+!.zshrc
+
+!Brewfile
+!LICENSE
+!README.md
