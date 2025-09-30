@@ -190,3 +190,4 @@ include themes
 include keyboard
 include specialbinds
 include workspace_output
+include wallpaper
