@@ -10,7 +10,7 @@ ZSH_THEME="bureau"
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 
-plugins=(git pass gem history history-substring-search brew common-aliases rails)
+plugins=(git pass gem history history-substring-search brew rails)
 
 # Load if exists
 test -e $ZSH/oh-my-zsh.sh && source $ZSH/oh-my-zsh.sh
@@ -48,14 +48,14 @@ tableflip() {
 export JAVA_HOME=/usr/bin/java
 export PATH=$JAVA_HOME/bin:$PATH
 
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$(go env GOPATH)/bin
+export PATH=$PATH:$($HOME/.local/bin/go env GOPATH)/bin
 export PATH=$PATH:/snap/bin
 
 export PATH=~/.local/bin:$PATH
 
 if command -v kubectl &> /dev/null; then
 	export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+	source <(kubectl completion zsh);
 fi
 
 if command -v bat &> /dev/null; then
@@ -70,10 +70,20 @@ if command -v exa &> /dev/null; then
 	alias ls='exa'
 fi
 
+# https://dystroy.org/dysk/
+if command -v dysk &> /dev/null; then
+	alias df='dysk'
+fi
+
+# https://github.com/sharkdp/fd
+if command -v fdfind &> /dev/null; then
+	alias find='fdfind'
+fi
+
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
-if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 
 if command -v terraform &> /dev/null; then
 	alias tf=terraform
@@ -88,8 +98,6 @@ if command -v tofu &> /dev/null; then
 	alias tfp='tofu plan'
 fi
 
-[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
 # Load specific local configuration, if exist
 test -e $HOME/.zshrc.local && source $HOME/.zshrc.local
-

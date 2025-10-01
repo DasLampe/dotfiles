@@ -5,6 +5,7 @@
 /.config/*
 !/.config/i3/
 !/.config/git/
+/.config/git/hooks/*/*.local
 !/.config/kitty/
 !/.config/systemd/user/
 !/.config/gtk-3.0/settings.ini
