@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '.tf$')
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep "\.tf$")
 
 if [[ $STAGED_FILES == "" ]]; then
 	exit 0
