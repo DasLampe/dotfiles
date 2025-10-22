@@ -80,7 +80,6 @@ if command -v fdfind &> /dev/null; then
 	alias find='fdfind'
 fi
 
-[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
@@ -98,6 +97,9 @@ if command -v tofu &> /dev/null; then
 	alias tfp='tofu plan'
 fi
 
+if test $XDG_RUNTIME_DIR/openssh_agent; then
+	export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/openssh_agent
+fi
 
 # Load specific local configuration, if exist
 test -e $HOME/.zshrc.local && source $HOME/.zshrc.local
