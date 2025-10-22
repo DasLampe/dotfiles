@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
 for hook in "$(dirname "$0")/prepare-commit-msg.d"/*; do
-    "$hook" "${1:-""}" "${2:-""}" "${3:""}"
-    RESULT=$?
-    if [ $RESULT != 0 ]; then
-        echo "prepare-commit-msg.d/$hook returned non-zero: $RESULT, abort commit"
-        exit $RESULT
-    fi
+	if test -e "$hook"; then
+		"$hook" "${1:-""}" "${2:-""}" "${3:""}"
+		RESULT=$?
+		if [ $RESULT != 0 ]; then
+			echo "prepare-commit-msg.d/$hook returned non-zero: $RESULT, abort commit"
+			exit $RESULT
+		fi
+	fi
 done
 
 exit
