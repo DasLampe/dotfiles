@@ -2,6 +2,9 @@ import = [
 	"~/.config/alacritty/catppuccin-mocha.toml"
 ]
 
+[scrolling]
+history = 100000
+
 [font]
 size = 12
 
