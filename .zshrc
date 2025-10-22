@@ -97,7 +97,7 @@ if command -v tofu &> /dev/null; then
 	alias tfp='tofu plan'
 fi
 
-if test $XDG_RUNTIME_DIR/openssh_agent; then
+if test -e $XDG_RUNTIME_DIR/openssh_agent; then
 	export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/openssh_agent
 fi
 
